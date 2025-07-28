@@ -1,5 +1,7 @@
 /// <reference types="vite/client" />
-import { createRootRoute, HeadContent, Scripts } from '@tanstack/react-router'
+import type { QueryClient } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { createRootRouteWithContext, HeadContent, Scripts } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import * as React from 'react'
 import { DefaultCatchBoundary } from '~/components/default-catch-boundary'
@@ -9,7 +11,9 @@ import { Toaster } from '~/components/ui/sonner'
 import appCss from '~/styles/app.css?url'
 import { seo } from '~/utils/seo'
 
-export const Route = createRootRoute({
+export const Route = createRootRouteWithContext<{
+  queryClient: QueryClient
+}>()({
   head: () => ({
     meta: [
       {
@@ -68,7 +72,9 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <body>
         <ThemeProvider defaultTheme="system" attribute="class">
           {children}
+
           <Toaster position="top-center" />
+          <ReactQueryDevtools buttonPosition="bottom-left" />
           <TanStackRouterDevtools position="bottom-right" />
           <Scripts />
         </ThemeProvider>
