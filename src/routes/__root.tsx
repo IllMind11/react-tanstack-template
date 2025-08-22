@@ -4,12 +4,12 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { createRootRouteWithContext, HeadContent, Scripts } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import * as React from 'react'
-import { DefaultCatchBoundary } from '~/components/default-catch-boundary'
-import { NotFound } from '~/components/not-found'
-import { ThemeProvider } from '~/components/theme-provider'
-import { Toaster } from '~/components/ui/sonner'
-import appCss from '~/styles/app.css?url'
-import { seo } from '~/utils/seo'
+import { DefaultCatchBoundary } from '~/shared/components/default-catch-boundary'
+import { NotFound } from '~/shared/components/not-found'
+import { ThemeProvider } from '~/shared/components/theme-provider'
+import appCss from '~/shared/styles/app.css?url'
+import { Toaster } from '~/shared/ui/sonner'
+import { seo } from '~/shared/utils/seo'
 
 export const Route = createRootRouteWithContext<{
   queryClient: QueryClient
