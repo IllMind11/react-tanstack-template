@@ -47,6 +47,8 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "eslint-plugin-react-you-might-not-need-an-effect": "^0.4.2",
+    "lint-staged": "^16.1.5",
+    "simple-git-hooks": "^2.13.1",
     "tailwindcss": "^4.1.12",
     "tw-animate-css": "^1.3.7",
     "typescript": "^5.9.0",
@@ -54,5 +56,14 @@
     "vite": "^7.1.3",
     "vite-plugin-checker": "^0.10.2",
     "vite-tsconfig-paths": "^5.1.4"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpx lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "pnpm tsc --noEmit",
+      "eslint --fix"
+    ]
   }
 }
