@@ -6,8 +6,7 @@ import { PanelLeftIcon } from 'lucide-react'
 import { Slot as SlotPrimitive } from 'radix-ui'
 import * as React from 'react'
 
-import { useIsMobile } from '~/shared/hooks/use-mobile'
-import { cn } from '~/shared/lib/utils'
+import { cn } from '~/shared/lib/cn'
 import { Button } from '~/shared/ui/button'
 import { Input } from '~/shared/ui/input'
 import { Separator } from '~/shared/ui/separator'
@@ -18,6 +17,7 @@ import {
   SheetHeader,
   SheetTitle,
 } from '~/shared/ui/sheet'
+import { useIsMobile } from '~/shared/ui/sidebar/use-mobile'
 import { Skeleton } from '~/shared/ui/skeleton'
 import {
   Tooltip,
