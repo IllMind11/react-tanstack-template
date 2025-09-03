@@ -21,7 +21,7 @@ export default antfu({
   },
   settings: {
     'better-tailwindcss': {
-      entryPoint: 'src/shared/styles/app.css',
+      entryPoint: 'src/app/styles/app.css',
     },
   },
 }, ...pluginRouter.configs['flat/recommended'], ...pluginQuery.configs['flat/recommended'])
